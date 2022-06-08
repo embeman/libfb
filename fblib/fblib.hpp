@@ -20,13 +20,17 @@ namespace fblib{
         device* fb_dev;
         int xres;
         int yres;
-        int bpp;
+        int max_x;
+        int max_y;
     public:
 
         display();
         // delete copy constructor only one instane of display should be created
         display(const display&) = delete;
        ~display();
+
+        int get_max_x(){return max_x;}
+        int get_max_y(){return max_y;}
 
         void draw_line(uint32_t,uint32_t,uint32_t,uint32_t,Color);
         void draw_line(Vec2 , Vec2,Color);

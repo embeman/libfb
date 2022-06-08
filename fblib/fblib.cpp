@@ -17,7 +17,8 @@ fblib::display::display(){
     // read information from device memory 
     xres = fb_dev->get_x_res();
     yres = fb_dev->get_y_res();
-    bpp = fb_dev->get_bpp();
+    max_x = fb_dev->get_max_x();
+    max_y = fb_dev->get_max_y();
 }
 
 fblib::display::~display(){
@@ -37,22 +38,14 @@ void fblib::display::draw_line(uint32_t x0,uint32_t y0,uint32_t x1 ,uint32_t y1,
 }
 
 void fblib::display::draw_line(Vec2 P0,Vec2 P1 ,Color color){
-    int a = (P1.y() - P0.y()) /(P1.x() - P0.x());
-    int b = P0.y() - (a * P0.x());
-    int y = P0.y();
-    for (int x = P0.x(); x < P1.x(); x++)
-    {
-        fb_dev->set_pixel(x , y , color);
-        y += a;
-    }
-          
+    this->draw_line(P0.x() , P0.y() , P1.x() , P1.y() , color);    
 }
 
 
 void fblib::display::clear_screen(){
     Color color(0xFF , 0xFF , 0xFF , 0xFF);
-    for(int y = 0; y < yres; y++){
-        for (int x = 0; x < xres; x++)
+    for(int y = max_y * -1 ; y < max_y; y++){
+        for (int x = max_x * -1; x < max_x; x++)
         {
             fb_dev->set_pixel(x,y,color);
         }
