@@ -10,8 +10,6 @@
 
 #include "fblib/fblib.hpp"
 #include "fblib/fblib_util.hpp"
-#include "model.h"
-#include "geometry.h"
 
 int main(){
     fblib::display testDisplay;
