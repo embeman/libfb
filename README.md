@@ -5,5 +5,3 @@ my goal is to build this library with custom linux image using <a href="yoctopro
 and launch it on beaglebone black or raspbery pi
 
 
-
-some code used here are from <a href="https://github.com/ssloy/tinyrenderer">tinyrenderer</a> project on github..
