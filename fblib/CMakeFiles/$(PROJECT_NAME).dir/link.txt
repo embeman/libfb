@@ -1,2 +1,0 @@
-/usr/bin/ar qc lib$(PROJECT_NAME).a "CMakeFiles/\$(PROJECT_NAME).dir/fblib.cpp.o"
-/usr/bin/ranlib lib$(PROJECT_NAME).a
