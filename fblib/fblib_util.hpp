@@ -3,7 +3,6 @@
 
 #include <stdint.h>
 
-
 namespace fblib{
 
     class Color {
@@ -31,6 +30,12 @@ namespace fblib{
         public:
         Vec2() = delete;
         Vec2(uint32_t X,uint32_t Y) : _x(X) , _y(Y){}
+        
+        int x(){return _x;}
+        int y(){return _y;}
+        void set_x(int x) { _x=x;}
+        void set_y(int y) { _y=y;}
+
     };
 
     class Vec3{

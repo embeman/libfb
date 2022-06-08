@@ -21,9 +21,6 @@ namespace fblib{
         int xres;
         int yres;
         int bpp;
-        int buffer_size;
-        char* screen_buffer;
-        int margin;
     public:
 
         display();
@@ -32,10 +29,9 @@ namespace fblib{
        ~display();
 
         void draw_line(uint32_t,uint32_t,uint32_t,uint32_t,Color);
+        void draw_line(Vec2 , Vec2,Color);
         void clear_screen();
-        // DEBUG ONLY
-        void print();
-
+        
     };
 };
 
