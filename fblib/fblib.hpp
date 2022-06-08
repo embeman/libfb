@@ -2,8 +2,6 @@
 #define _FBLIB_HPP_
 
 #include <unistd.h>
-#include <iostream>
-#include <stdlib.h>
 #include <fcntl.h>
 #include <stdlib.h>
 #include <linux/fb.h>
@@ -12,10 +10,10 @@
 #include <string>
 
 #include "fblib_util.hpp"
+#include "interface.hpp"
 
 namespace fblib{
 
-    
     class display
     {
     private:

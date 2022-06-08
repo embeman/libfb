@@ -1,5 +1,8 @@
-#include <stdint.h>
+#ifndef _INTERFACE_H_
+#define _INTERFACE_H_
 
+#include <stdint.h>
+#include "fblib_util.hpp"
 
 namespace fblib{
         class device{
@@ -30,3 +33,5 @@ namespace fblib{
         void print_device_info();
     };
 }
+
+#endif

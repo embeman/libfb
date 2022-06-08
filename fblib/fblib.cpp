@@ -5,14 +5,11 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <stdlib.h>
-#include <linux/fb.h>
-#include <sys/mman.h>
 #include <sys/ioctl.h>
 #include <string>
 
 #include "fblib.hpp"
 #include "fblib_util.hpp"
-#include "interface.hpp"
 
 fblib::display::display(){
     fb_dev = new device();

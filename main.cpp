@@ -9,7 +9,6 @@
 #include <string>
 
 #include "fblib/fblib.hpp"
-#include "fblib/fblib_util.hpp"
 
 int main(){
     fblib::display testDisplay;

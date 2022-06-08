@@ -5,7 +5,6 @@ Project(fbtest)
 ADD_SUBDIRECTORY(fblib)
 
 FILE(GLOB SOURCE *.cpp)
-configure_file(obj/boggie/body.obj ${CMAKE_BINARY_DIR} COPYONLY) 
 
 ADD_EXECUTABLE(fbtest ${SOURCE})
 

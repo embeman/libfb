@@ -1,4 +1,16 @@
+#include <unistd.h>
+#include <iostream>
+#include <algorithm>
+#include <math.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <sys/ioctl.h>
+#include <linux/fb.h>
+#include <sys/mman.h>
+
 #include "interface.hpp"
+#include "fblib_util.hpp"
 
 
 fblib::device::device(){
