@@ -5,6 +5,7 @@
 
 
 namespace fblib{
+
     class Color {
     private:
         uint8_t _r;
@@ -30,6 +31,17 @@ namespace fblib{
         public:
         Vec2() = delete;
         Vec2(uint32_t X,uint32_t Y) : _x(X) , _y(Y){}
+    };
+
+    class Vec3{
+        private:
+            int _x;
+            int _y;
+            int _z;
+
+        public:
+        Vec3() = delete;
+        Vec3(uint32_t X , uint32_t Y , uint32_t Z) : _x(X) , _y(Y) , _z(Z){}
     };
 
 }

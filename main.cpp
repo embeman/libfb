@@ -17,8 +17,6 @@ int main(){
     fblib::display testDisplay;
     testDisplay.print();
     testDisplay.clear_screen();
-    fblib::Color c(0x00,0x00,0xff,0xff);
-    testDisplay.draw_obj("body.obj",c);
     while (1);
 
     
