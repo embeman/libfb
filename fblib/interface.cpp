@@ -10,8 +10,6 @@
 #include <sys/mman.h>
 
 #include "interface.hpp"
-#include "fblib_util.hpp"
-
 
 fblib::device::device(){
     // Open framebuffer driver
@@ -39,7 +37,7 @@ fblib::device::device(){
     }else{
         std::cout << "<<Varriable Info Read Done Succefully>>\n";
     }
-    
+
     /* 
         Mappnig device Memory to dev_fb
     */
@@ -62,10 +60,11 @@ fblib::device::~device(){
     close(fbfd);
 }
 
-void fblib::device::set_pixel(uint32_t x ,uint32_t y,fblib::Color color){
+void fblib::device::set_pixel(uint32_t x ,uint32_t y,uint8_t red,
+                                    uint8_t green , uint8_t blue , uint8_t alpha){
     // convert cartizian to screen
-    x = x + get_x_res() /2;
-    y = get_y_res()/2 - y;
+    x = x + (get_x_res() / 2);
+    y = (get_y_res()/2 ) - y;
     
     // Boundary check
     if (x > vinfo.xres){x = vinfo.xres;}
@@ -73,19 +72,16 @@ void fblib::device::set_pixel(uint32_t x ,uint32_t y,fblib::Color color){
     
     if (y > vinfo.yres){y = vinfo.yres;}
     if (y < 0){y = 0;}
+    
     // Pixel Location (addres of the first byte in the pixel)
     int location = (x * vinfo.bits_per_pixel /8) + (y * finfo.line_length);
     // BGRA
-    dev_fb[location + 0] = color.blue();
-    dev_fb[location + 1] = color.green();
-    dev_fb[location + 2] = color.red();
-    dev_fb[location + 3] = color.alpha();
+    dev_fb[location + 0] = blue;
+    dev_fb[location + 1] = green;
+    dev_fb[location + 2] = red;
+    dev_fb[location + 3] = alpha;
 }
 
-
-void fblib::device::set_pixel(Vec2 point,Color color){
-    this->set_pixel(point.x(),point.y() , color);
-}
 
 
 int fblib::device::get_fbfd(){  return fbfd;    }

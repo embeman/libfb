@@ -2,6 +2,8 @@
 #define _FBLIB_UTILL_
 
 #include <stdint.h>
+#include <bits/stdc++.h>
+#include <vector>
 
 namespace fblib{
 
@@ -22,6 +24,8 @@ namespace fblib{
         uint8_t alpha(){return _a;}
     };
 
+
+
     class Vec2{
         private:
             int _x;
@@ -29,13 +33,23 @@ namespace fblib{
 
         public:
         Vec2() = delete;
-        Vec2(uint32_t X,uint32_t Y) : _x(X) , _y(Y){}
+        Vec2(int X,int Y) : _x(X) , _y(Y){}
         
         int x(){return _x;}
         int y(){return _y;}
         void set_x(int x) { _x=x;}
         void set_y(int y) { _y=y;}
-
+        
+        void swap(Vec2* p){
+            int tempX = this->_x;    
+            int tempY = this->_y;
+            
+            this->_x = p->x();
+            this->_y = p->y();
+            
+            p->set_x(tempX);
+            p->set_y(tempY);
+        }
     };
 
     class Vec3{
@@ -46,7 +60,7 @@ namespace fblib{
 
         public:
         Vec3() = delete;
-        Vec3(uint32_t X , uint32_t Y , uint32_t Z) : _x(X) , _y(Y) , _z(Z){}
+        Vec3(int X , int Y , int Z) : _x(X) , _y(Y) , _z(Z){}
     };
 
 }

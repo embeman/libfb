@@ -2,7 +2,6 @@
 #define _INTERFACE_H_
 
 #include <stdint.h>
-#include "fblib_util.hpp"
 
 namespace fblib{
     
@@ -33,10 +32,9 @@ namespace fblib{
         char* get_device_fb();
         int get_device_fb_size();
 
-        Vec2 cartz_to_screen(Vec2);
         // Cartizian system 
-        void set_pixel(uint32_t x,uint32_t y,Color color);
-        void set_pixel(Vec2,Color color);
+        void set_pixel(uint32_t x,uint32_t y,uint8_t red,
+                                    uint8_t green , uint8_t blue , uint8_t alpha);
 
         // DEBUG to stdout
         void print_device_info();
